@@ -1,0 +1,13 @@
+---
+title: "Lifecycle Methods and Fetch with Class Syntax"
+type: "article"
+description: "Render a FAQ accordion using React"
+tags: "javascript, react, stateful components"
+behaviors:
+  - react_on_node
+  - react_router
+  - react_testing
+  - sinatra
+ignore:
+- "node_modules/"
+- "lifecycle-methods-and-fetch-with-class-syntax.md"
