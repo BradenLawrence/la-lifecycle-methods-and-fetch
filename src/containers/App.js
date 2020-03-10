@@ -12,9 +12,26 @@ class App extends Component {
     this.trackNewTheory = this.trackNewTheory.bind(this);
   }
 
+  componentDidMount(){
+    fetch("/api/v1/theories")
+    .then((response) => response.json())
+    .then((persistedTheoriesResponse) => {
+      this.setState({theories: persistedTheoriesResponse})
+    })
+  }
+
   trackNewTheory(theorySubmission) {
-    let currentTheories = this.state.theories
-    this.setState({ theories: currentTheories.concat(theorySubmission) })
+    fetch("api/v1/theories", {
+      method: "POST",
+      body: JSON.stringify(theorySubmission)
+    })
+    .then(response => response.json())
+    .then(json => {
+      this.setState({ theories: this.state.theories.concat(json) })
+    })
+
+    // let currentTheories = this.state.theories
+    // this.setState({ theories: currentTheories.concat(theorySubmission) })
   }
 
   render() {
