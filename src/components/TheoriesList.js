@@ -2,9 +2,8 @@ import React from 'react';
 
 const TheoriesList = props => {
   let theoryListItems = props.theories.map(theory => {
-    // the key for these elements is temporarily set to be the theory description until we have ids generated from our database
     return(
-      <li key={theory.theoryDescription}>
+      <li key={theory.id}>
         {theory.theoryDescription}
       </li>
     )
